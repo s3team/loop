@@ -1,0 +1,14 @@
+LOOP is a logic oriented opaque predicate checker. It is able 
+to detect the following opaque predicates in binary code:
+
+1. Invariant opaque predicate
+2. Contextual opaque predicate
+3. Dynamic opaque predicate
+
+LOOP is developed based on BAP.
+
+BAP: The Binary Analysis Platform. For more information see the
+project webpage at http://bap.ece.cmu.edu
+
+BAP is released under MIT license and the GPL license; see the
+appropriate LICENSE.{MIT,GPL}.

@@ -1,0 +1,107 @@
+Pin tools switches
+
+-cache_limit  [default 500000000]
+	      Code-cache size limit (bytes)
+-follow_progs 
+	      Follow the given program names if they are exec'd
+-freq  [default 10000]
+       Report value of eip every n instructions.
+-h  [default 0]
+    Print help message (Return failure of PIN_Init() in order to allow the
+    tool                             to print help message)
+-help  [default 0]
+       Print help message (Return failure of PIN_Init() in order to allow the
+       tool                             to print help message)
+-log_key_frames  [default false]
+		 Periodically output key frames containing important program values
+-log_limit  [default 0]
+	    Number of instructions to limit logging to.
+-log_syscalls  [default false]
+	       Log system calls (even those unrelated to taint)
+-logall_after  [default false]
+	       Log all (even untainted) instructions after the first tainted
+	       instruction
+-logall_before  [default false]
+		Log all (even untainted) instructions before and after the first
+		tainted instruction
+-logfile  [default pintool.log]
+	  The log file path and file name
+-logone_after  [default false]
+	       Log the first instruction outside of the log range (taint-start/end),
+	       and then exit.
+-o  [default out.bpt]
+    Trace file to output to.
+-pivots_file  [default ]
+	      Load file of pivot gadgets
+-seh_mode  [default false]
+	   Record an SEH exploits
+-skip_taints  [default 0]
+	      Skip this many taint introductions
+-taint_args  [default false]
+	     Command-line arguments will be considered tainted
+-taint_end  [default 0xffffffff]
+	    All logged instructions will have lower addresses
+-taint_env 
+	   Environment variables to be considered tainted
+-taint_files 
+	     Consider the given files as being tainted
+-taint_indices  [default false]
+		Values loaded with tainted memory indices will be considered tainted
+-taint_net  [default false]
+	    Everything read from network sockets will be considered tainted
+-taint_start  [default 0x0]
+	      All logged instructions will have higher addresses
+-taint_stdin  [default false]
+	      Everything read from stdin will be considered tainted
+-taint_track  [default true]
+	      Enable taint tracking
+-trig_addr  [default ]
+	    Address of trigger point. No logging will occur until execution
+	    reaches this address.
+-trig_count  [default 0]
+	     Number of times trigger will be executed before activating.
+-trig_enaddr  [default ]
+	      Address of trigger ending point. logging will be ended at this
+	      address.
+-trig_mod  [default ]
+	   Module that trigger point is in.
+-unique_logfile  [default 0]
+		 The log file names will contain the pid
+
+Line information controls
+
+-discard_line_info 
+		   Discard line information for specific module. Module name should be a
+		   short name without path, not a symbolic link
+-discard_line_info_all  [default 0]
+			Discard line information for all modules.
+-dwarf_file 
+	    Point pin to a different file for debug information. Syntax:
+	    app_executable:<path_to_different_fileExaple (OS X): -dwarf_file
+	    get_source_app:get_s
+	    ource_app.dSYM/Contents/Resources/DWARF/get_source_app
+
+Symbols controls
+
+-short_name  [default 0]
+	     Use the shortest name for the RTN. Names with version substrings are
+	     preferred over the same name without the substring.
+-support_jit_api  [default 0]
+		  Enables the Jitted Functions Support
+-unrestricted_rtn_size  [default 0]
+			Use the unrestricted RTN size. When set the RTN size defined by the
+			distance between RTN start to the beginning of next RTN.
+
+Statistic switches
+
+-profile  [default 0]
+	  print amount of memory dynamically allocated but not yet freed by the
+	  tool
+-statistic  [default 0]
+	    print general statistics
+
+General switches (available in pin and tool)
+
+-slow_asserts  [default 0]
+	       Perform expensive sanity checks
+
