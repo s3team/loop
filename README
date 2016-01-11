@@ -12,3 +12,20 @@ project webpage at http://bap.ece.cmu.edu
 
 BAP is released under MIT license and the GPL license; see the
 appropriate LICENSE.{MIT,GPL}.
+
+How to use:
+
+1. Use Pin to generate a execution trace. It also needs a lib called gentrace. The command is like:
+   LOOPDIR/pin/pin -t LOOPDIR/pintraces/obj-ia32/gentrace.so -taint_args -- yourprogram yourargs
+
+2. Convert trace into concrete trace:
+   LOOPDIR/utils/iltrans -trace tracename -trace-concrete -pp-ast tracename.con.il
+
+3. Preprocess the trace:
+   LOOPDIR/utils/pre_process.pl tracename.con.il
+
+4. Symbolic execute the trace:
+   LOOPDIR/utils/iltrans -il tracename.con.il -il-formula tracename.stp
+
+5. Solve the formula with STP. You will need a STP solver installed.
+   stp tracename.stp
