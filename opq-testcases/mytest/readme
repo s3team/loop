@@ -1,0 +1,22 @@
+This example shows how to use LOOP.
+
+1. Compile mytest1.c
+   gcc -g -m32 mytest1.c -o mytest1
+
+2. Run Pin to get a trace
+   make trace
+
+3. Make a concrete trace
+   make con
+
+4. Filter the trace
+   make filter
+
+5. Preprocess
+   make pre_process
+
+6. Symbolic execution
+   ./run_se.sh
+
+7. run STP solver
+   ./run_stp.sh
