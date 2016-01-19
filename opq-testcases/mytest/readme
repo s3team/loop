@@ -5,6 +5,7 @@ This example shows how to use LOOP.
 
 2. Run Pin to get a trace
    make trace
+   The program needs an input, type "3" then enter.
 
 3. Make a concrete trace
    make con
